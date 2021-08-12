@@ -39,7 +39,7 @@ A psuedogene is found by searching dna for start_codon.  If start_codon is found
 
 3. Your code should be able to be invoked over HTTP using curl
 
-1. It is important that the every customer that should be sent an email, is sent one, and only those customers.  The service should coded to be reliable, i.e. the mean-time between failure should be high.  You can assume the database and the SMTP server have been made Highly Available.
+1. It is important that the every customer, who should be sent an email, is sent one, and emails are only sent to those customers.  The service should coded to be reliable, i.e. the mean-time between failure should be high.  You can assume the database is replicated (hot standby) and the SMTP service has a backup server (e.g. smtp.example.com and smtp2.example.com.
 
 1. This service could be called at any time and possibly called while it is already busy with a previous request.
 

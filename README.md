@@ -6,7 +6,7 @@ We have a database of our customers' DNA sequences.  To keep things simple for t
 From time to time, we want to be able to send out bulk emails to customers who have a specified pseudogene that can be found in their DNA sequence.  The emails have static but unknown content as they will be drafted by our marketing department.  The email content does not need to change.  E.g. we don’t need the content of the email to have a customer's name.
 
 ## Your mission
-You need to create some working code for this service and submit it.  Your solution must search through the database for any customers that have a given psuedogene and email them the given content.
+You need to create some working code for this service and submit it.  Your solution must search through the database for any customers that have a given psuedogene and email them the given content.  At our next discussion, we will want to go through your solution with you to understand why you made the decisions you did.
 
 ## Requirements and additional information
 1. The relational database has the following, very simple data structure where customers can have 1 or more ordered DNA sequences:

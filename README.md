@@ -10,6 +10,13 @@ You need to create some working code for this service and submit it.  Your solut
 
 ## Requirements and additional information
 1. The relational database has the following, very simple data structure:
+┌───────────────────────────────┐     ┌──────────────────────────────────┐
+│Customers                      │     │DNA                               │
+├───────────────────────────────┤     ├──────────────────────────────────┤
+│PK id          INTEGER NOT NULL│1─┐  │ PK id           INTEGER NOT NULL │
+│   email_addr  CHAR(100)       │  └─*│ FK customer_id  INTEGER NOT NULL │
+└───────────────────────────────┘     │    sequence     CHAR(2^32)       │
+                                      └──────────────────────────────────┘
 
 1. Sample data is included for your convenience
 

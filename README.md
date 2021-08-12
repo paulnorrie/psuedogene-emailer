@@ -3,7 +3,7 @@ Develop a service to identify customers with a specified psuedogene and email th
 
 We have a database of our customers' DNA sequences.  To keep things simple for this exercise, we’ll simplify our customers' biology. Treat a DNA sequence as a string of characters.  Each character represents a nucleotide which is one in the set of: “A”, “T”, “C”, “G”, “U”.  Our customers aren’t particularly sophisticated beings so the maximum length of their DNA strings is 232 characters.  We have over 10 million customers.  Like you, our customers have genes that allow us to create the proteins that make us up.  Genes only take up a small proportion of DNA sequences.  One of the other elements in a DNA sequence are psuedogenes. A pseudogene is like a gene but it doesn’t end up creating any proteins. Sometimes these psuedogenes turn out to be real genes, or otherwise important.
 
-From time to time, we want to be able to send out bulk emails to customers who have a specified pseudogene that can be found in their DNA sequence.  The emails have static but unknown content as they will be drafted by our marketing department.  The email content does not need to change.  E.g. we don’t need the content of the email to have a customer's name.
+From time to time, we want to be able to send out bulk emails to customers who have a specified pseudogene that can be found in their DNA sequence.  The emails have will be drafted be drafted by our marketing department in a content management system.  
 
 ## Your mission
 You need to create some working code for this service and submit it.  Your solution must search through the database for any customers that have a given psuedogene and email them the given content.  At our next discussion, we will want to go through your solution with you to understand why you made the decisions you did.
@@ -16,8 +16,8 @@ You need to create some working code for this service and submit it.  Your solut
 ├───────────────────────────────┤     ├──────────────────────────────────┤
 │PK id          INTEGER NOT NULL│1─┐  │ PK id           INTEGER NOT NULL │
 │   email_addr  CHAR(100)       │  └─*│ FK customer_id  INTEGER NOT NULL │
-└───────────────────────────────┘     │    sequence     CHAR(2^16)       │
-                                      │    order        INTEGER NOT NULL |
+│   first_name  CHAR(50)        │     │    sequence     CHAR(2^16)       │
+└───────────────────────────────┘     │    order        INTEGER NOT NULL |
                                       └──────────────────────────────────┘
 ```
 Random DNA data can be created at https://www.bioinformatics.org/sms2/random_dna.html
@@ -35,17 +35,21 @@ A psuedogene is found by searching dna for start_codon.  If start_codon is found
 
 3. You should send emails using SMTP to an external SMTP service.  You should use a Mock SMTP server like [MailHog](https://github.com/mailhog/MailHog) or [Mailslurper](https://www.mailslurper.com/)
 
-1. Your code should be able to be invoked over HTTP using curl
+1. The content of the email is provided to you as a string. If the string contains the substring "{first_name}" then it needs to be replaced by the customers first name.
+
+3. Your code should be able to be invoked over HTTP using curl
 
 1. It is important that the every customer that should be sent an email, is sent one, and only those customers.  The service should coded to be reliable, i.e. the mean-time between failure should be high.  You can assume the database and the SMTP server have been made Highly Available.
 
 1. This service could be called at any time and possibly called while it is already busy with a previous request.
 
 1. Your submission should include a README.MD file containing:
-  1.  Instructions to build and deploy your solution, including any dependancies you require. 
-  2.  Any assumptions you have made.
-  3.  How you suggest the solution is deployed to handle a large amount of requests and be highly available.
-  4.  Documentation to developers on how to use the service
+  - Instructions to build and deploy your solution, including any dependancies you require. 
+  - Any assumptions you have made.
+  - How you suggest the solution is deployed to handle a large amount of requests and be highly available.
+  - Documentation to developers on how to use the service
+  - Any suggested improvements to make it more maintainable, performant, or otherwise "better"
+
 
 
 

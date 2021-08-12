@@ -44,11 +44,11 @@ A psuedogene is found by searching dna for start_codon.  If start_codon is found
 1. This service could be called at any time and possibly called while it is already busy with a previous request.
 
 1. Your submission should include a README.MD file containing:
-  - Instructions to build and deploy your solution, including any dependancies you require. 
-  - Any assumptions you have made.
-  - How you suggest the solution is deployed to handle a large amount of requests and be highly available.
-  - Documentation to developers on how to use the service
-  - Any suggested improvements to make it more maintainable, performant, or otherwise "better"
+   - Instructions to build and deploy your solution, including any dependancies you require. 
+   - Any assumptions you have made.
+   - How you suggest the solution is deployed to handle a large amount of requests and be highly available.
+   - Documentation to developers on how to use the service
+   - Any suggested improvements to make it more maintainable, performant, or otherwise "better"
 
 
 

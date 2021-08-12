@@ -9,19 +9,20 @@ From time to time, we want to be able to send out bulk emails to customers who h
 You need to create some working code for this service and submit it.  Your solution must search through the database for any customers that have a given psuedogene and email them the given content.
 
 ## Requirements and additional information
-1. The relational database has the following, very simple data structure:
+1. The relational database has the following, very simple data structure where customers can have 1 or more ordered DNA sequences:
 ```
 ┌───────────────────────────────┐     ┌──────────────────────────────────┐
 │Customers                      │     │DNA                               │
 ├───────────────────────────────┤     ├──────────────────────────────────┤
 │PK id          INTEGER NOT NULL│1─┐  │ PK id           INTEGER NOT NULL │
 │   email_addr  CHAR(100)       │  └─*│ FK customer_id  INTEGER NOT NULL │
-└───────────────────────────────┘     │    sequence     CHAR(2^32)       │
+└───────────────────────────────┘     │    sequence     CHAR(2^16)       │
+                                      │    order        INTEGER NOT NULL |
                                       └──────────────────────────────────┘
 ```
-1. Sample data is included for your convenience
+Random DNA data can be created at https://www.bioinformatics.org/sms2/random_dna.html
 
-1. The psuedocode for identifying a psuedogene is:
+2. The psuedocode for identifying a psuedogene is:
 ```
 Given the following inputs:
 
@@ -32,7 +33,7 @@ stop_codon: of 3 nucleotide bases that identifies where the psuedogene ends.The 
 A psuedogene is found by searching dna for start_codon.  If start_codon is found, then find stop_codon at least three characters after start_codon.  If the stop_codon is found, then return all characters from the beginning of the start_codon to the beginning of the stop_codon (i.e. include the start_codon but not the stop_codon).
 ```
 
-1. You should send emails using SMTP to an external SMTP service.  You should use a Mock SMTP server like [MailHog](https://github.com/mailhog/MailHog) or [Mailslurper](https://www.mailslurper.com/)
+3. You should send emails using SMTP to an external SMTP service.  You should use a Mock SMTP server like [MailHog](https://github.com/mailhog/MailHog) or [Mailslurper](https://www.mailslurper.com/)
 
 1. Your code should be able to be invoked over HTTP using curl
 

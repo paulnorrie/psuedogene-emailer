@@ -37,7 +37,7 @@ A psuedogene is found by searching dna for start_codon.  If start_codon is found
 
 1. The content of the email is provided to you as a string. If the string contains the substring "{first_name}" then it needs to be replaced by the customers first name.
 
-3. Your code should be able to be invoked over HTTP using curl
+1. Your code should be able to be invoked over HTTP using curl. You can decide on how the Request and Response work
 
 1. It is important that the every customer, who should be sent an email, is sent one, and emails are only sent to those customers.  The service should coded to be reliable, i.e. the mean-time between failure should be high.  You can assume the database is replicated (hot standby) and the SMTP service has a backup server (e.g. smtp.example.com and smtp2.example.com.
 

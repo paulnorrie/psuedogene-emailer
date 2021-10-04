@@ -10,6 +10,8 @@ From time to time, we want to be able to send out bulk emails to customers who h
 ## Your mission
 Create a working solution for this service.  Your solution must search through a database for any customers that have a given psuedogene and email them the given content.  At our next discussion, we will want to go through your solution with you to understand why you made the decisions you did.
 
+> Don't spend more than 5 hours on this.  The fundamental rule is we want enough from you to have a conversation about the choices you made and why you made them.   > We want to know how you think.  This isn't a test.
+
 ## Requirements and additional information
 1. The relational database has the following, very simple data structure where customers have multiple ordered DNA sequences:
 ```
@@ -51,7 +53,7 @@ For example:
    The psuedo gene is GCA
 ```
 
-3. You should send emails using SMTP to an external SMTP service.  You should use a Mock SMTP server like [MailHog](https://github.com/mailhog/MailHog) or [Mailslurper](https://www.mailslurper.com/)
+3. You should send emails using SMTP to an external SMTP service.  You could use a Mock SMTP server like [MailHog](https://github.com/mailhog/MailHog) or [Mailslurper](https://www.mailslurper.com/).  You could also just simply mock this in your code.   
 
 1. The content of the email is provided to you as a string. If the string contains the substring `{first_name}` then it must be replaced by the customers `first_name` value in the database.
 
@@ -61,11 +63,11 @@ For example:
 
 1. This service could be called at any time and possibly called while it is already busy with a previous request.
 
-1. Preferably any code would be written in Javascript/Typescript/SQL but if you have more familiarity with another language, then you may use that.
+1. Preferably any code would be written in Javascript/Typescript/SQL but if you have more familiarity with another language, then you absolutely go and use that.
 
-1. Your submission should include a README.MD file containing:
+1. It would be nice if your submission include a README.MD file containing things like:
    - Instructions to build and deploy your solution, including any dependancies you require. 
-   - Any assumptions you have made.
+   - Any assumptions you have made. 
    - How you suggest the solution is deployed to handle a large amount of requests and be highly available.
    - Documentation to developers on how to use the service
    - Any suggested improvements to make it more maintainable, performant, or otherwise "better"

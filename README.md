@@ -10,7 +10,7 @@ From time to time, we want to be able to send out bulk emails to customers who h
 ## Your mission
 Create a working solution for this service.  Your solution must search through a database for any customers that have a given psuedogene and email them the given content.  At our next discussion, we will want to go through your solution with you to understand why you made the decisions you did.
 
-> Don't spend more than 5 hours on this.  The fundamental rule is we want enough from you to have a conversation about the choices you made and why you made them.   > We want to know how you think.  This isn't a test.
+> Don't spend more than 5 hours on this.  The fundamental rule is we want enough from you to have a conversation about the choices you made and why you made them. We want to know how you think.  This isn't a test.
 
 ## Requirements and additional information
 1. The relational database has the following, very simple data structure where customers have multiple ordered DNA sequences:
